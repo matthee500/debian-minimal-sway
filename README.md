@@ -13,7 +13,6 @@ For this minimal sway installation firstly you would need a minimal Debian insta
 * alacritty
 * neovim
 * ranger
-* librewolf
 * docker
 * git
 * sudo
@@ -22,6 +21,7 @@ For this minimal sway installation firstly you would need a minimal Debian insta
 * nerd fonts
 * neofetch
 * pavucontrol
+* firefox-esr
 
 ## Installation Process
 
@@ -75,6 +75,27 @@ sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacri
   systemctl --user --now enable wireplumber.service
   ```
 
-We now have a basic working installation of sway, next we will add a browser and add some customization to our install.
+We now have a basic working installation of sway, next we will add some customization to our install.
 
-## Browser Installation
+## Customization
+
+### Fonts
+For the customization we will install the full nerdfonts font pack.
+* Clone the repository:
+  ```bash
+  git clone https://github.com/ryanoasis/nerd-fonts.git
+  ```
+* To install, cd into the cloned repository and run the following:
+  ```bash
+  ./install.sh
+  ```
+
+### Customize Sway:
+* Clone this repository:
+  ```bash
+  git clone https://github.com/matthee500/sway-dotfiles
+  ```
+* Copy all the contents of the config-files folder into the ~/.config folder:
+  ```bash
+  cp config-files/* ~/.config/
+  ```
