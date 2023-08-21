@@ -22,6 +22,7 @@ For this minimal sway installation firstly you would need a minimal Debian insta
 * neofetch
 * pavucontrol
 * firefox-esr
+* fuzzle
 
 ## Installation Process
 
@@ -99,3 +100,54 @@ For the customization we will install the full nerdfonts font pack.
   ```bash
   cp config-files/* ~/.config/
   ```
+
+### Install VSCode
+When you install the vscode .deb package or setup the repository and install vscode, it will lokk for Xorg to start so we will have to edit the startup config of vscode to use wayland.
+
+* First to install vscode:
+   ```bash
+   sudo apt install wget gpg
+   ```
+   ```bash
+   wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+   ```
+   ```bash
+   sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+   ```
+   ```bash
+   sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+   ```
+   ```bash
+   rm -f packages.microsoft.gpg
+   ```
+   ```bash
+   sudo apt install apt-transport-https
+   ```
+   ```bash
+   sudo apt update
+   ```
+   ```bash
+   sudo apt install code # or code-insiders
+   ```
+* Now we need to edit `/usr/share/applications/code.desktop` to enable the wayland functionality:
+  ```
+  [Desktop Entry]
+  Name=Visual Studio Code
+  Comment=Code Editing. Redefined.
+  GenericName=Text Editor
+  Exec=/usr/share/code/code --unity-launch %F --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations
+  Icon=vscode
+  Type=Application
+  StartupNotify=false
+  StartupWMClass=Code
+  Categories=TextEditor;Development;IDE;
+  MimeType=text/plain;inode/directory;application/x-code-workspace;
+  Actions=new-empty-window;
+  Keywords=vscode;
+  
+  [Desktop Action new-empty-window]
+  Name=New Empty Window
+  Exec=/usr/share/code/code --new-window %F --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations
+  Icon=vscode
+  ``` 
+
