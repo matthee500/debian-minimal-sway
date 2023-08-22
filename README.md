@@ -53,11 +53,12 @@ The minimal install won't have SUDO installed or the user added to the SUDO grou
   ```
 
 ### Sway Installation
-The swaywm installation can begin now, we use the following command to install sway and some extra packages that will help for some functionality.
+The swaywm installation can begin now.
 
-```bash
-sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacritty neovim ranger git pipewire wireplumber neofetch pavucontrol fuzzel firefox-esr
-```
+* We use the following command to install sway and some extra packages that will help with some functionality:
+  ```bash
+  sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacritty neovim ranger git pipewire wireplumber neofetch pavucontrol fuzzel firefox-esr
+  ```
 
 * We can launch sway now by simply typing sway and hitting enter or we can edit our /etc/profile to launch sway on login.
 * Seeing that Neovim is already installed we can use the nvim command to edit our /etc/profile :
