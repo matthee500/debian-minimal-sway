@@ -1,6 +1,6 @@
 # Minimal Debian Sway
 
-For this minimal sway installation firstly you would need a minimal Debian install. I would suggest when tasksel lists the desktop environments to deselect everything and continue with the minimal installation.
+For this minimal sway installation firstly you would need a minimal Debian install. I would suggest when tasksel lists the desktop environments, deselect everything and continue with the minimal installation.
 
 ## Packages for the minimal install
 
@@ -28,7 +28,7 @@ For this minimal sway installation firstly you would need a minimal Debian insta
 
 ### SUDO Installation
 
-The minimal install wont have SUDO installed or the user added to the SUDO group. The nex few steps will entail how to do it.
+The minimal install won't have SUDO installed or the user added to the SUDO group. The next few steps will entail how to do it.
 
 * First we must switch to the root user, we do this by using the following command:
   ```bash
@@ -47,7 +47,7 @@ The minimal install wont have SUDO installed or the user added to the SUDO group
   ```bash
   usermod -aG sudo <username>
   ```
-* We will have to exit all logged in sessions to apply our modifications, in our case we will have to exit twice, a reboot will also suffice:
+* We will have to exit all logged-in sessions to apply our modifications, in our case we will have to exit twice, a reboot will also suffice:
   ```bash
   exit
   ```
@@ -76,12 +76,12 @@ sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacri
   systemctl --user --now enable wireplumber.service
   ```
 
-We now have a basic working installation of sway, next we will add some customization to our install.
+We now have a basic working installation of sway, next we will add some customization to our installation.
 
 ## Customization
 
 ### Fonts
-For the customization we will install the full nerdfonts font pack.
+For the customization, we will install the full Nerdfonts font pack.
 * Clone the repository:
   ```bash
   git clone https://github.com/ryanoasis/nerd-fonts.git
@@ -102,7 +102,7 @@ For the customization we will install the full nerdfonts font pack.
   ```
 
 ### Install VSCode
-When you install the vscode .deb package or setup the repository and install vscode, it will lokk for Xorg to start so we will have to edit the startup config of vscode to use wayland.
+When you install the vscode .deb package or setup the repository and install vscode, it will look for Xorg to start so we will have to edit the startup config of vscode to use Wayland.
 
 * First to install vscode:
    ```bash
@@ -129,7 +129,7 @@ When you install the vscode .deb package or setup the repository and install vsc
    ```bash
    sudo apt install code # or code-insiders
    ```
-* Now we need to edit `/usr/share/applications/code.desktop` to enable the wayland functionality:
+* Now we need to edit `/usr/share/applications/code.desktop` to enable the Wayland functionality:
   ```
   [Desktop Entry]
   Name=Visual Studio Code
@@ -149,5 +149,17 @@ When you install the vscode .deb package or setup the repository and install vsc
   Name=New Empty Window
   Exec=/usr/share/code/code --new-window %F --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations
   Icon=vscode
-  ``` 
+  ```
+
+### Install Obsidian
+When you install the Obsidian .deb package, it will look for Xorg to start so we will have to edit the startup config of vscode to use Wayland.
+
+* Use the following to install the Debian package that was downloaded from the Obsidian website:
+  ```bash
+  sudo dpkg -i <package.deb>
+  ```
+* Now we need to edit `/usr/share/applications/obsidian.desktop` to enable Wayland functionality:
+  ```
+
+  ```
 
