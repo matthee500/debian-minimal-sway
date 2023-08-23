@@ -161,6 +161,14 @@ When you install the Obsidian .deb package, it will look for Xorg to start so we
   ```
 * Now we need to edit `/usr/share/applications/obsidian.desktop` to enable Wayland functionality:
   ```
-
+  [Desktop Entry]
+  Name=Obsidian
+  Exec=/opt/Obsidian/obsidian %U --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations
+  Terminal=false
+  Type=Application
+  Icon=obsidian
+  StartupWMClass=obsidian
+  Comment=Obsidian
+  MimeType=x-scheme-handler/obsidian;
+  Categories=Office
   ```
-
