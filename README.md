@@ -57,7 +57,7 @@ The swaywm installation can begin now.
 
 * We use the following command to install sway and some extra packages that will help with some functionality:
   ```bash
-  sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacritty neovim ranger git pipewire wireplumber neofetch pavucontrol fuzzel firefox-esr btop qt6-wayland xdg-desktop-portal-wlr xwayland
+  sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacritty neovim ranger git pipewire wireplumber neofetch pavucontrol fuzzel firefox-esr btop qt6-wayland xdg-desktop-portal-wlr
   ```
 
 * We can launch sway now by simply typing sway and hitting enter or we can edit our /etc/profile to launch sway on login.
