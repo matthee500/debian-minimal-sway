@@ -23,6 +23,7 @@ For this minimal sway installation firstly you would need a minimal Debian insta
 * pavucontrol
 * firefox-esr
 * fuzzel
+* mako
 
 ## Installation Process
 
@@ -57,7 +58,7 @@ The swaywm installation can begin now.
 
 * We use the following command to install sway and some extra packages that will help with some functionality:
   ```bash
-  sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacritty neovim ranger git pipewire wireplumber neofetch pavucontrol fuzzel firefox-esr btop qt6-wayland qtwayland5 xdg-desktop-portal-wlr
+  sudo apt install -y sway sway-backgrounds swaybg swayidle swaylock waybar alacritty neovim ranger git pipewire wireplumber neofetch pavucontrol fuzzel firefox-esr btop qt6-wayland qtwayland5 xdg-desktop-portal-wlr mako-notifier libnotify-bin
   ```
 
 * We can launch sway now by simply typing sway and hitting enter or we can edit our /etc/profile to launch sway on login.
