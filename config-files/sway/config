@@ -19,6 +19,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu fuzzel
+exec mako
 #
 include /etc/sway/config-vars.d/*
 #
@@ -26,7 +27,7 @@ include /etc/sway/config-vars.d/*
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #
-#output "*" bg /home/matthee500/Downloads/river.jpg fill
+output "*" bg /home/matthee500/Downloads/space.jpg fill
 #
 #
 # Example configuration:
@@ -48,8 +49,8 @@ output eDP-1 {
 default_border none
 #
 # gaps inner|outer|horizontal|vertical|top|right|bottom|left <px>
-gaps inner 10
-gaps outer 10
+gaps inner 8
+gaps outer 8
 #
 ### Idle configuration
 #
